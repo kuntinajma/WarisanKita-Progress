@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/register_layout"
+    android:id="@+id/profile_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="30dp">
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="20dp">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/register_title"
+        android:id="@+id/profile_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/register_title_style"
-        android:text="@string/register_string"
-        android:layout_marginTop="30dp"
+        android:text="@string/profile_string"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -32,12 +34,12 @@
         android:id="@+id/fullname_create"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:hint="@string/input_fullname"
         style="@style/outline_box_style"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_title">
+        app:layout_constraintTop_toBottomOf="@id/profile_title">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fullname_input"
             android:layout_width="match_parent"
@@ -130,55 +132,47 @@
             android:inputType="phone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_password"
-        android:layout_width="wrap_content"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_change"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/input_password"
-        style="@style/data_input_style"
-        android:layout_marginBottom="-8dp"
-        app:layout_constraintBottom_toTopOf="@id/password_create"
-        app:layout_constraintStart_toStartOf="@id/password_create"/>
+        android:text="@string/change_password"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintTop_toBottomOf="@id/phone_create"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password_create"
-        android:layout_width="0dp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:hint="@string/input_password"
-        style="@style/outline_box_style"
-        app:endIconMode="password_toggle"
+        android:text="@string/delete_account"
+        android:textSize="20sp"
+        android:backgroundTint="#F31919"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@id/button_change"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:textSize="20sp"
+        android:backgroundTint="#F31919"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@id/button_delete"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_home"
+        android:textSize="20sp"
+        android:backgroundTint="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone_create">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ViewFlipper
-        android:id="@+id/flipper_button_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/password_create"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:textSize="20sp"
-            android:backgroundTint="#F31919"
-            android:layout_marginTop="40dp"/>
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:progressBarStyleSmall"
-            android:layout_gravity="center"/>
-    </ViewFlipper>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
